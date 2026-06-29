@@ -1,0 +1,49 @@
+//IF_TWO_MATRIX_ARE_EQUAL
+#include <stdio.h>
+
+int main() {
+    int a[10][10], b[10][10];
+    int rows, cols, i, j, flag = 1;
+
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    printf("Enter elements of first matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter elements of second matrix:\n");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            if (a[i][j] != b[i][j]) {
+                flag = 0;
+                break;
+            }
+        }
+    }
+
+    if (flag == 1)
+        printf("Matrices are equal.\n");
+    else
+        printf("Matrices are not equal.\n");
+
+    return 0;
+}
+/*OUTPUT
+Enter number of rows and columns: 2 3
+Enter elements of first matrix:
+1 2 3 
+4 5 6 
+Enter elements of second matrix:
+5 4 3 
+1 2 6
+Matrices are not equal.*/
